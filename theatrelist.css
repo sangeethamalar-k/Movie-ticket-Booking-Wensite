@@ -1,0 +1,169 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f7f9fb;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+ 
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.movie-title {
+  font-size: 1.8rem;
+  color: #222;
+}
+
+.movie-info span {
+  margin: 5px;
+  padding: 5px 10px;
+  background: #eee;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* Date Selector */
+.date-selector {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.date-box {
+  flex: 0 0 auto;
+  text-align: center;
+  background: #f0f0f0;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.date-box.active {
+  background: #ff2e63;
+  color: #fff;
+}
+
+.day {
+  display: block;
+  font-weight: bold;
+}
+
+.date {
+  font-size: 1.2rem;
+}
+
+
+/* Theatre Card */
+.theatre-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.theatre-card {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.theatre-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.theatre-header h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.green {
+  color: green;
+}
+.red {
+  color: red;
+}
+
+.showtimes {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.show-btn {
+  padding: 8px 16px;
+  background: rgb(36, 35, 35);
+  border: 2px solid #090909;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+}
+
+.show-btn:hover {
+  background: white;
+  color: #111010;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .movie-title {
+    font-size: 1.3rem;
+  }
+  .filter-bar {
+    flex-direction: column;
+  }
+  .show-btn {
+    flex: 1 1 45%;
+  }
+}
+.theatre-list {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+
+.date-selector {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px;
+  background: #f9f9f9;
+  gap: 10px;
+}
+
+.date-btn {
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.date-btn.active {
+  background: #f70c7e;
+  color: white;
+}
+
+.date-btn:hover {
+  background: #f0f0f0;
+}
+
+.seat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4px;
+}

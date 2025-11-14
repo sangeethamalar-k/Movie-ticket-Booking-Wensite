@@ -1,0 +1,238 @@
+:root{
+  --bg:#f6f8fa;
+  --card:#fff;
+  --accent:#1b9b4a;
+  --muted:#777;
+  --danger:#e74c3c;
+  --pane-width:320px;
+}
+
+*{box-sizing:border-box;font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+body{margin:0;background:var(--bg);color:#222;}
+
+/* Topbar */
+.topbar{
+  background:#fff;padding:14px 20px;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center;
+}
+.topbar h1{margin:0;font-size:18px;}
+.header-info{color:var(--muted);font-size:13px}
+
+/* Layout */
+.container{display:flex;gap:20px;padding:20px;max-width:1200px;margin:0 auto}
+.leftpanel{width:var(--pane-width);display:flex;flex-direction:column;gap:16px}
+.mainpanel{flex:1}
+
+/* Cards */
+.card{background:var(--card);padding:10px;border-radius:8px;box-shadow:0 2px 6px rgba(10,10,10,0.03)}
+.card h2{margin-top:0;font-size:16px}
+
+/* Controls */
+.controls{display:flex;gap:12px;align-items:center;margin-bottom:8px}
+.controls label{display:flex;flex-direction:column;font-size:13px}
+.controls select{padding:6px;border-radius:4px;border:1px solid #ddd}
+
+/* Seat map */
+.screen{background:linear-gradient(#dfeff2,#f7fbfd);text-align:center;padding:10px;border-radius:6px;margin-bottom:12px;font-weight:700;color:#678}
+.seats-grid{display:flex;flex-direction:column;gap:8px}
+.seat-row{display:flex;align-items:center;gap:12px}
+.row-label{width:28px;text-align:center;color:var(--muted)}
+.seat-block{display:flex;gap:6px;flex-wrap:wrap}
+.seat{width:36px;height:36px;border-radius:6px;border:2px solid #e0e0e0;background:#fff;display:flex;align-items:center;justify-content:center;position:relative;cursor:pointer;padding:0}
+.seat.available:hover{transform:translateY(-3px)}
+.seat .seat-num{font-size:11px}
+.seat.selected{border-color:var(--accent);background:rgba(27,155,74,0.06)}
+.seat.booked{border-color:#cfcfcf;background:#f3f3f3;cursor:pointer}
+.gender-tag{position:absolute;right:2px;top:2px;font-size:10px;padding:2px 4px;border-radius:4px;color:#fff}
+.gender-tag.male{background:#2d98f7}
+.gender-tag.female{background:#f85c9a}
+.gender-tag.other{background:#8e44ad}
+
+.aisle{width:20px}
+
+/* legend */
+.legend{margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.legend-item{font-size:13px;color:var(--muted)}
+.box{display:inline-block;width:14px;height:14px;border-radius:3px;border:2px solid #e0e0e0;margin-right:6px;vertical-align:middle}
+.box.available{background:#fff}
+.box.selected{background:rgba(27,155,74,0.06);border-color:var(--accent)}
+.box.booked{background:#f3f3f3}
+.small{width:12px;height:12px}
+
+/* food menu */
+.foodcard .menu-list{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.menu-row{display:flex;justify-content:space-between;align-items:center}
+.menu-left{display:flex;flex-direction:column}
+.menu-controls{display:flex;gap:8px;align-items:center}
+.menu-controls button{padding:6px 8px;border-radius:6px;border:1px solid #ddd;background:#fff}
+.qty{min-width:24px;display:inline-block;text-align:center}
+
+/* review */
+.review-form label{display:block;margin-bottom:8px}
+.review-form input,.review-form textarea,.review-form select{width:100%;padding:8px;border-radius:6px;border:1px solid #eee}
+.review-form textarea{min-height:70px}
+.reviews-list .review-item{border-top:1px dashed #eee;padding-top:8px;margin-top:8px}
+
+/* Buttons */
+.btn{padding:8px 12px;border-radius:6px;border:1px solid #ccc;background:#fff;cursor:pointer}
+.btn.primary{background:var(--accent);color:#fff;border:0}
+
+/* Responsive behavior */
+@media (max-width: 1000px) {
+  .container{padding:14px;max-width:960px}
+  .leftpanel{width:300px}
+}
+
+@media (max-width: 820px) {
+  .container{flex-direction:column}
+  .leftpanel{width:100%}
+  .mainpanel{width:100%}
+  .seats-grid{transform:scale(0.95);transform-origin:center}
+}
+
+@media (max-width: 480px) {
+  .topbar h1{font-size:16px}
+  .seat{width:30px;height:30px}
+  .row-label{width:22px}
+  .seats-grid{gap:6px}
+  .container{padding:10px}
+}
+
+/* ---------------- MODELS ---------------- */
+.Models {
+  padding: 50px 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding-top: 40px;
+}
+
+.card-wrapper {
+  position: relative;
+  width: 300px;
+  height: 650px;
+  overflow-y: hidden;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  border: 1px solid #1d1b1b;
+  margin: 0 auto;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card-info {
+  position: absolute;
+  bottom: 120px;
+  left: -100%; /* Hidden initially */
+  width: 300px;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #111;
+  /* background: rgba(165, 164, 164, 0.85); */
+  transition: left 0.3s ease;
+}
+
+.card-wrapper:hover {
+  width: 500px; /* expand width */
+}
+
+.card-wrapper:hover .card-img {
+  transform: scale(1.1);
+}
+
+.card-wrapper:hover .card-info {
+  left: 0;
+}
+/* =============================== */
+/* ✅ RESPONSIVE MEDIA QUERIES     */
+/* =============================== */
+
+/* Large Laptops (≤1200px) */
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card-wrapper {
+    width: 280px;
+    height: 600px;
+  }
+
+  .card-wrapper:hover {
+    width: 400px;
+  }
+}
+
+/* Tablets (≤992px) */
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-wrapper {
+    width: 260px;
+    height: 550px;
+  }
+
+  .card-wrapper:hover {
+    width: 350px;
+  }
+
+  .card-info {
+    bottom: 80px;
+  }
+}
+
+/* Mobile Devices (≤768px) */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+  }
+
+  .card-wrapper {
+    width: 90%;
+    height: auto;
+  }
+
+  .card-wrapper:hover {
+    width: 90%; /* No expansion on mobile */
+  }
+
+  .card-info {
+    left: 0;
+    position: relative;
+    bottom: auto;
+    padding: 15px;
+  }
+
+  .card-img {
+    height: 400px;
+  }
+}
+
+/* Small Phones (≤480px) */
+@media (max-width: 480px) {
+  .Models {
+    padding: 30px 10px;
+  }
+
+  .card-img {
+    height: 350px;
+  }
+
+  .card-info {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

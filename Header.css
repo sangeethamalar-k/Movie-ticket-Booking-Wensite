@@ -1,0 +1,197 @@
+/* ----------------------- */
+/* 🔹 GLOBAL STYLES */
+/* ----------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #000;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* ----------------------- */
+/* 🔹 HEADER */
+/* ----------------------- */
+.header {
+  color: white;
+  background-color: black;
+  padding: 20px;
+  text-align: center;
+}
+
+/* ----------------------- */
+/* 🔹 SLIDESHOW / BANNER */
+/* ----------------------- */
+.sideshow {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  object-position: center;
+  border: #111 1px solid;
+}
+
+/* ----------------------- */
+/* 🔹 MOVIE LIST */
+/* ----------------------- */
+.movielist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 16px;
+  gap: 20px;
+}
+
+/* ----------------------- */
+/* 🔹 FOOTER */
+/* ----------------------- */
+.footer {
+  color: white;
+  background-color: black;
+  padding: 40px 20px;
+
+ 
+}
+
+.logos {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.mediaicon {
+  display: flex;
+  gap: 19px;
+  margin-top: 10px;
+  
+}
+
+.footer1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.image {
+  width: 150px;
+  height: auto;
+  margin: 10px;
+}
+
+.listplaystore {
+  margin-top: 20px;
+}
+
+.footcontent {
+  text-align: center;
+  
+}
+
+/* ----------------------- */
+/* 🔹 RESPONSIVE BREAKPOINTS */
+/* ----------------------- */
+
+/* ✅ Mobile Devices (max 600px) */
+@media (max-width: 600px) {
+  .sideshow {
+    max-height: 250px;
+  }
+
+  .movielist {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mediaicon {
+    flex-direction: row;
+    margin-left: 0;
+    gap: 12px;
+  }
+
+  .logos {
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  .image {
+    width: 120px;
+  }
+
+  .footer {
+    padding: 30px 10px;
+  }
+
+  .searchfooter {
+    max-width: 100%;
+  }
+
+  .listplaystore {
+    margin-left: 0;
+  }
+
+  .footcontent {
+    margin-left: 0;
+  }
+}
+
+/* ✅ Tablets (601px–1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .sideshow {
+    max-height: 350px;
+  }
+
+  .movielist {
+    gap: 15px;
+  }
+
+  .mediaicon {
+    margin-left: 0;
+  }
+
+  .logos {
+    justify-content: center;
+  }
+
+  .image {
+    width: 130px;
+  }
+
+  .listplaystore {
+    margin-left: 0;
+  }
+
+  .footcontent {
+    margin-left: 0;
+  }
+}
+
+/* ✅ Laptops / Desktops (min-width: 1025px) */
+@media (min-width: 1025px) {
+  .sideshow {
+    max-height: 500px;
+  }
+
+  .movielist {
+    justify-content: space-evenly;
+  }
+
+  .mediaicon {
+    margin-left: 600px;
+  }
+
+  .listplaystore {
+    margin-left: 900px;
+  }
+
+  .footcontent {
+    margin-left: 300px;
+  }
+}
